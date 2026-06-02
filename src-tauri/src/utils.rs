@@ -42,18 +42,6 @@ pub fn region_screenshot_handler(app: &tauri::AppHandle, x: u32, y: u32, width: 
     }
 }
 
-pub fn open_edit_window(app: &tauri::AppHandle) {
-    if let Some(window) = app.get_webview_window("edit") {
-        window.close().ok();
-    }
-    WebviewWindowBuilder::new(app, "main", WebviewUrl::App("edit.html".into()))
-        .transparent(true)
-        .fullscreen(true)
-        .focused(true)
-        .build()
-        .unwrap();
-}
-
 pub fn get_user_name() -> Option<String> {
     env::var("USER").or_else(|_| env::var("USERNAME")).ok()
 }

@@ -33,7 +33,6 @@ export default defineConfig(async () => ({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        edit: resolve(__dirname, 'edit.html'), // <--- Tell Vite about edit.html
       },
     },
   },
